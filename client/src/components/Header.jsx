@@ -4,7 +4,7 @@ function Header () {
     return(
         <header className="row">
             <div>
-                <a className="brand" href="/">Amazon</a>
+                <a className="brand" href="/">amazon</a>
             </div>
             <div>
                 <a href="/cart">Cart</a>
