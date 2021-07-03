@@ -1,31 +1,22 @@
 import React from 'react';
+import {BrowserRouter,Route} from "react-router-dom";  
 import Header from './Header'
-import Card from './Card'
 import Footer from './Footer'
-import data from '../data';
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
 
 function App() {
   return (
-    <div className="grid-container">
-        <Header />
-        <main>
-            <div className="row center">
-                {
-                    data.products.map((product => {
-                        return(
-                            <Card 
-                                key = {product._id}
-                                name={product.name} 
-                                image={product.image}
-                                price={product.price}
-                            />
-                        );
-                    }))
-                }
-            </div>
-        </main>
-        <Footer />
-    </div>
+    <BrowserRouter>
+        <div className="grid-container">
+            <Header />
+            <main>
+                <Route path="/products/:id" component={ProductScreen} exact />
+                <Route path="/" component={HomeScreen} exact />
+            </main>
+            <Footer />
+        </div>
+    </BrowserRouter>
   );
 }
 
