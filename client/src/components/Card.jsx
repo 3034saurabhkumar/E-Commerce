@@ -1,24 +1,22 @@
 import React from 'react';
+import Rating from './Rating';
 
 function Card (product) {
     return(
         <div key={product.id}>
             <div className="card">
-                <a href={`/products/${product.id}`}>
+                <a href={"/products/"+product.id}>
                     <img className="medium" src={product.image} alt={product.name} />
                 </a>
                 <div className="card-body">
                     <a href={`/products/${product.id}`}>
                         <h2>{product.name}</h2>
                     </a>
-                    <div className="rating">
-                        <span> <em className="fa fa-star"></em> </span>
-                        <span> <em className="fa fa-star"></em> </span>
-                        <span> <em className="fa fa-star"></em> </span>
-                        <span> <em className="fa fa-star"></em> </span>
-                        <span> <em className="fa fa-star"></em> </span>
-                    </div>
-                    <div className="price">
+                    <Rating 
+                        rating = {product.rating}
+                        numReviews = {product.numReviews}
+                    />
+                    <div className="price">&#x20b9;
                         {product.price}
                     </div>
                 </div>
