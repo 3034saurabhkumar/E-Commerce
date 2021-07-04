@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import LoadingBox from '../LoadingBox';
-import MessageBox from '../MessageBox';
 import axios from 'axios';
 import Card from '../Card';
+import LoadingBox from '../LoadingBox';
+import MessageBox from '../MessageBox';
 
 function HomeScreen() {
     const [products, setProducts] = useState([]);
